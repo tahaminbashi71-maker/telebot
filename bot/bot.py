@@ -24,8 +24,6 @@ def welcome1(message):
     text += "/command4 = درباره ما \n"
     text +=  " \n"
     text += "/command5 = پیج ایسنتاگرام \n"
-    text +=  " \n"
-    text += "/command6 = کانال ایتا \n"
     bot.reply_to(message , text)
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command1"])
@@ -41,8 +39,6 @@ def welcome2(message):
     text += "/command4 = درباره ما \n"
     text +=  " \n"
     text += "/command5 = پیج ایسنتاگرام \n"
-    text +=  " \n"
-    text += "/command6 = کانال ایتا \n"
     bot.reply_to(message , text)
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command5"])
@@ -68,10 +64,6 @@ def welcome6(rows):
     text += "https://t.me/javaneh_childrens_clothing \n"
     bot.reply_to(rows , text)
     """ -------------------------------------------------------------------- """
-@bot.message_handler(commands=["command6"])
-def welcome7(ita):
-    bot.reply_to(ita , " کانال ایتا  : ")
-
 def start_polling():
     while True:
         try:
@@ -89,6 +81,7 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
