@@ -4,7 +4,7 @@ import telebot
 bot = telebot.TeleBot("8309977542:AAHbGygclFlUZ2tTETuSzmbvQgo7b64TaWw")
 
 @bot.message_handler(commands=["start"])
-def welcome(message):
+def welcome1(message):
     text = "سلام به ربات تلگرامی جوانه خوش آمدید 🌱\n"
     text +=  " \n"
     text += "/command1 = شروع دوباره 🔄 \n"
@@ -21,7 +21,7 @@ def welcome(message):
     bot.reply_to(message , text)
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command1"])
-def welcome(message):
+def welcome2(message):
     text = "سلام به ربات تلگرامی جوانه خوش آمدید 🌱\n"
     text +=  " \n"
     text += "/command1 = شروع دوباره 🔄 \n"
@@ -38,24 +38,25 @@ def welcome(message):
     bot.reply_to(message , text)
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command5"])
-def welcome(ins):
+def welcome3(ins):
     bot.reply_to(ins , "پیج اینستاگرام ما : javaneh_clothes_children")
 
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command3"])
-def welcome(sit):
+def welcome4(sit):
     bot.reply_to(sit , "سایت ما : javanehclothes.ir")
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command4"])
-def welcome(aboutme):
+def welcome5(aboutme):
     bot.reply_to(aboutme , "ما یک سایت پوشاک هستیم")
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command2"])
-def welcome(rows):
+def welcome6(rows):
     bot.reply_to(rows , " محصولات ما  : ")
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command6"])
-def welcome(ita):
+def welcome7(ita):
     bot.reply_to(ita , " کانال ایتا  : ")
+
 
 bot.polling()
