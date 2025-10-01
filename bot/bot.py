@@ -60,7 +60,7 @@ def welcome5(aboutme):
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command2"])
 def welcome6(rows):
-    bot.reply_to(rows , " محصولات ما  : ")
+    bot.reply_to(rows , " محصولات ما  : https://t.me/javaneh_childrens_clothing")
     """ -------------------------------------------------------------------- """
 @bot.message_handler(commands=["command6"])
 def welcome7(ita):
@@ -83,3 +83,4 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
