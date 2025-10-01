@@ -1,7 +1,15 @@
-
+import os
+import time
+import threading
 import telebot
+from flask import Flask
 
 bot = telebot.TeleBot("8309977542:AAHbGygclFlUZ2tTETuSzmbvQgo7b64TaWw")
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "ربات تلگرام فعال است ✅", 200
 
 @bot.message_handler(commands=["start"])
 def welcome1(message):
@@ -58,5 +66,20 @@ def welcome6(rows):
 def welcome7(ita):
     bot.reply_to(ita , " کانال ایتا  : ")
 
+def start_polling():
+    while True:
+        try:
+            bot.infinity_polling(timeout=60, long_polling_timeout=90, skip_pending=True)
+        except Exception as e:
+            print("خطای polling:", e)
+            time.sleep(5)
 
-bot.polling()
+if __name__ == "__main__":
+    # اجرای polling در یک Thread جدا
+    t = threading.Thread(target=start_polling, daemon=True)
+    t.start()
+
+    # اجرای Flask (پورت باید از Render گرفته بشه)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
